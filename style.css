@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+.body {
+  background-image: url(./img/snakeimg.jpg);
+  background-size: 100vw 100vh;
+  background-position: center;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.body h1 {
+  position: absolute;
+  top: 2vh;
+  color: rgb(40, 24, 3);
+}
+#highScore {
+  position: absolute;
+  top: 42px;
+  font-size: 22px;
+  right: 22px;
+  color: red;
+}
+.score {
+  position: absolute;
+  top: 10px;
+  font-size: 28px;
+  right: 35px;
+  color: rgb(10, 32, 197);
+}
+.move-btns {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+#board {
+  background-color: rgb(154, 173, 154);
+  height: 80%;
+  width: 50%;
+  opacity: 0.5;
+  box-shadow: 8px 8px 5px rgb(55, 75, 50), -8px -8px 5px rgb(55, 75, 50);
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+}
+.game-over {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  width: 30%;
+  position: absolute;
+  top: 30px;
+  display: none;
+  z-index: 4;
+  background-color: aqua;
+}
+
+@media only screen and (max-width: 1080px) {
+  .score {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    right: 35px;
+  }
+  #highScore {
+    position: absolute;
+    top: 34px;
+    font-size: 18px;
+    right: 7px;
+  }
+  #board {
+    width: 70%;
+    height: 60%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .body h1 {
+    position: absolute;
+    top: 3vh;
+    left: 4vw;
+    font-size: 28px;
+  }
+
+  .score {
+    position: absolute;
+    top: 10px;
+    font-size: 18px;
+    right: 35px;
+  }
+  #highScore {
+    position: absolute;
+    top: 42px;
+    font-size: 14px;
+    right: 22px;
+  }
+  #move-btn {
+    height: 180px;
+    width: 200px;
+    position: absolute;
+    bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+  .move-btns {
+    display: block;
+    background-color: transparent;
+    box-shadow: 2px 3px 5px rgb(86, 76, 76);
+    border-radius: 12px;
+  }
+  .move-btn1 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .move-btn2 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .move-btn3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .move-btn4 {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .body {
+    height: 100%;
+    width: 100%;
+    background-image: url(./img/snake480.jpg);
+    background-size: cover;
+  }
+  #board {
+    height: 50vh;
+    width: 90%;
+    position: absolute;
+    top: 10vh;
+  }
+}
+.head {
+  background: linear-gradient(black, red);
+  border: 2px solid black;
+  border-radius: 100px;
+  height: 100%;
+  width: 100%;
+  scale: 1.2;
+}
+.snake-body {
+  background: linear-gradient(rgb(64, 60, 60), black);
+  border-radius: 34px;
+}
+.food {
+  background: linear-gradient(rgb(255, 21, 0), rgb(229, 255, 0));
+  border-radius: 34px;
+  border: 2px solid rgb(67, 7, 7);
+}
+.restart-dialog ,.pause-dialog {
+  display: none;
+  position: absolute;
+  height: 30vmin;
+  width: 60vmin;
+  top: 20%;
+  text-align: center;
+  background-color: rgb(240, 240, 231);
+  padding: 20px 0px;
+  border: 1px solid rgb(161, 108, 108);
+  box-shadow: 2px 2px 5px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+.restart-dialog p, .pause-dialog p {
+  margin: 0 0 20px 0;
+  font-size: 22px;
+  color: rgb(181, 82, 112);
+}
+
+.restart-dialog button ,.start-dialog button ,.pause-dialog button {
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: rgb(181, 82, 112);
+  box-shadow: 2px 2px 4px;
+  background-color: rgb(8, 8, 8);
+}
+
+.start-dialog {
+  position: absolute;
+  height: 30vmin;
+  width: 60vmin;
+  top: 20%;
+  text-align: center;
+  background-color: rgb(240, 240, 231);
+  padding: 20px 0px;
+  border: 1px solid rgb(161, 108, 108);
+  box-shadow: 2px 2px 5px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+#pause-btn{
+  position: absolute;
+  bottom: 16px;
+  right: 10px;
+  font-size: 25px;
+}
+
+#volume-btn {
+  position: absolute;
+  bottom: 2%;
+  left: 10px;
+  padding: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 34px;
+  background-color: rgb(61, 61, 105);
+  border: none;
+  display: inline-block;
+}

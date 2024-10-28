@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="body">
+        
+        <div id="start-dialog" class="start-dialog">
+            <p id="start-message">Click start <br> To play</p>
+            <button id="dialog-start">Start</button>
+        </div>
+        <div class="score">Score: 0</div>
+        <div id="highScore">HighScore: 0</div>
+        <h1>Snake Mania</h1>
+        <div id="restart-dialog" class="restart-dialog">
+            <p id="restart-message">Game over!!</p>
+            <button id="dialog-restart">Restart</button>
+        </div>
+        <div id="board"></div>
+        <div id="move-btn">
+            <button class="move-btn1 move-btns"><img src="./icons/upArrow.svg" alt=""></button>
+            <button class="move-btn2 move-btns"><img src="./icons/downArrow.svg" alt=""></button>
+            <button class="move-btn3 move-btns"><img src="./icons/leftArrow.svg" alt=""></button>
+            <button class="move-btn4 move-btns"><img src="./icons/rightArrow.svg" alt=""></button>
+        </div>
+        <button id="volume-btn">🔊</button>
+        <button id="pause-btn">⏸️</button>
+        <div id="pause-dialog" class="pause-dialog" >
+            <p id="pause-message">Game paused!!</p>
+            <button id="resume">Resume</button>
+        </div>
+    </div>
+    <script src="index2.js"></script>
+</body>
+
+</html>
